@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiSSim", "GiSSim\GiSSim.csproj", "{31AF6F73-15E9-4790-84AF-5425D3A50DBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31AF6F73-15E9-4790-84AF-5425D3A50DBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31AF6F73-15E9-4790-84AF-5425D3A50DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31AF6F73-15E9-4790-84AF-5425D3A50DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31AF6F73-15E9-4790-84AF-5425D3A50DBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {584EE731-1F3E-4784-AEDD-ECA9E668CB7F}
+	EndGlobalSection
+EndGlobal
