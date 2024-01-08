@@ -11,8 +11,17 @@ namespace GiSSim
     {
         // Поиск кратчайшего пути между двумя узлами
         public void byTime ()
-        { }
+        { 
+
+        }
         public void byDistance()
-        { }
+        {
+
+        }
+        private bool[] CreatingMatrixAdjacency()
+        {
+            
+            return new bool[0];
+        }
     }
 }
