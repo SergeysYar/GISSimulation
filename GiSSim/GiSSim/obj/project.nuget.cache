@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "5eszXILztn4xQDwrOFpIFczYpvMoYIDhy29DsgN2E2mWN/HzDrhY3E5EnjiHHUUBlPf7DK3Wo2VbYisYqTIT7A==",
+  "dgSpecHash": "WGAx+ZHhR7W1IGcDi1qjXDaMoV8UoXHuTiBTrZPDmFHruSATPMg/SACNK1bn1UP0+y0e/57SDQKteURmPoVJsQ==",
   "success": true,
   "projectFilePath": "E:\\_КубГТУ\\_ВКР\\GISS\\GISSimulation\\GISSimulation\\GiSSim\\GiSSim\\GiSSim.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Сергей\\.nuget\\packages\\graphsharp\\1.1.0\\graphsharp.1.1.0.nupkg.sha512",
+    "C:\\Users\\Сергей\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Сергей\\.nuget\\packages\\quickgraph\\3.6.61119.7\\quickgraph.3.6.61119.7.nupkg.sha512",
     "C:\\Users\\Сергей\\.nuget\\packages\\wpfextensions\\1.0.0\\wpfextensions.1.0.0.nupkg.sha512"
   ],

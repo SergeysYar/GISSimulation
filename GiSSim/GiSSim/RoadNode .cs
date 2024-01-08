@@ -7,8 +7,14 @@ using QuickGraph;
 
 namespace GiSSim
 {
-    internal class RoadNode
+    public class RoadNode
     {
-        public int Id;
+        public int Id { get; set; }
+        public string streetNames { get; set; }
+        public RoadNode(int id, string StreetNames)
+        {
+            Id = id;
+            streetNames= StreetNames;
+        }
     }
 }
