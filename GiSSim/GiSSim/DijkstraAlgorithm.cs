@@ -12,7 +12,7 @@ namespace GiSSim
         public Dictionary<int, double> Dijkstra(RoadEdge source, Dictionary<int, RoadNode> nodes, Dictionary<int, List<RoadEdge>> edges)
         {
             var distances = new Dictionary<int, double>();
-            var previous = new Dictionary<int, int>(); // To reconstruct path
+            var previous = new Dictionary<int, int>();
             var remaining = new HashSet<int>(nodes.Keys.Select(id => id));
 
             foreach (var node in nodes.Values)
