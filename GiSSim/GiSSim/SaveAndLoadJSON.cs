@@ -12,15 +12,15 @@ namespace GiSSim
 {
     public class SaveAndLoadJSON
     {
-        public static void SaveGraphToJSON(RoadGraph roadGraph, string filePath)
+        public static void SaveGraphToJSON(RoadMap roadGraph, string filePath)
         {
             string json = JsonConvert.SerializeObject(roadGraph, Formatting.Indented);
             File.WriteAllText(filePath, json);
         }
-        public static RoadGraph LoadGraphToJSON(string filePath) 
+        public static RoadMap LoadGraphToJSON(string filePath) 
         {
             string json = File.ReadAllText(filePath);
-            RoadGraph graph = JsonConvert.DeserializeObject<RoadGraph>(json);
+            RoadMap graph = JsonConvert.DeserializeObject<RoadMap>(json);
             return graph;
         }
     }
