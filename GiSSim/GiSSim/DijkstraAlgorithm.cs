@@ -85,7 +85,8 @@ namespace GiSSim
         // Результат, содержащий путь, расстояние и время
         public class ShortestPathResult
         {
-            public List<RoadNode> Path { get; set; }
+            public List<RoadNode> PathNode { get; set; }
+            public List<RoadEdge> PathEdge { get; set; }
             public double Distance { get; set; }
             public double Time { get; set; }
         }
@@ -137,7 +138,7 @@ namespace GiSSim
             List<RoadNode> path = BuildPath(targetNode, previousNodes);
             return new ShortestPathResult
             {
-                Path = path,
+                PathNode = path,
                 Distance = distances[targetNode],
                 Time = times[targetNode]
             };
