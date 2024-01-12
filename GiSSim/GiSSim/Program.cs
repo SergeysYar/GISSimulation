@@ -207,26 +207,38 @@ public class Program
         //        Console.WriteLine(node.streetNames);
         //    }
         //}
-
-
-        DijkstraAlgorithmEdge dijkstra = new DijkstraAlgorithmEdge();
-
-        // Находим кратчайший путь
-        List<RoadEdge> shortestPath = dijkstra.FindShortestPath(roadMap.Nodes, roadMap.Edges, edge1.Source, edge11.Target);
-
-        // Выводим кратчайший путь
-        if (shortestPath != null)
+        List<Tuple<RoadEdge, RoadEdge>> paths = RandomPathGenerator.GenerateRandomPaths(roadMap);
+        int i = 0;
+        foreach (var item in paths)
         {
-            Console.WriteLine("Shortest path:");
-            foreach (RoadEdge edge in shortestPath)
+            Console.WriteLine(item.Item1.NameGap + "\t" + item.Item2.NameGap);
+            Console.WriteLine(item.Item1.NameGap + "\t" + item.Item2.NameGap);
+
+
+            Console.WriteLine("Информация по пути " + i);
+            i++;
+
+            DijkstraAlgorithmEdge dijkstra = new DijkstraAlgorithmEdge();
+
+            // Находим кратчайший путь
+            List<RoadEdge> shortestPath = dijkstra.FindShortestPath(roadMap.Nodes, roadMap.Edges, item.Item1.Source, item.Item1.Target);
+
+            // Выводим кратчайший путь
+            if (shortestPath != null)
             {
-                Console.WriteLine($"{edge.NameGap} ({edge.Source.streetNames} -> {edge.Target.streetNames})");
+                Console.WriteLine("Shortest path:");
+                foreach (RoadEdge edge in shortestPath)
+                {
+                    Console.WriteLine($"{edge.NameGap} ({edge.Source.streetNames} -> {edge.Target.streetNames})");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No path found.");
             }
         }
-        else
-        {
-            Console.WriteLine("No path found.");
-        }
+
+
         //DijkstraAlgorithm dijkstra = new DijkstraAlgorithm();
         //RoadNode startNode = edge3.Target;
         //RoadNode targetNode = edge8.Source;
