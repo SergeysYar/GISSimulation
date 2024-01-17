@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuickGraph;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -97,6 +98,7 @@ namespace GiSSim
             Dictionary<RoadNode, double> times = new Dictionary<RoadNode, double>();
             Dictionary<RoadNode, RoadNode> previousNodes = new Dictionary<RoadNode, RoadNode>();
             List<RoadNode> unvisitedNodes = new List<RoadNode>();
+            List<RoadEdge> pathEdge = new List<RoadEdge>();
 
             // Инициализация начальных расстояний и времён
             foreach (RoadNode node in roadMap.Nodes)
@@ -118,27 +120,51 @@ namespace GiSSim
                 if (currentNode == targetNode)
                     break;
 
+                //foreach (RoadEdge edge in roadMap.Edges)
+                //{
+                //    if (edge.Source == currentNode)
+                //    {
+                //        double distanceThroughCurrentNode = distances[currentNode] + edge.LengthM;
+                //        double timeThroughCurrentNode = times[currentNode] + edge.LengthM / (edge.SpeedLimit*5/18);
+
+                //        if (distanceThroughCurrentNode < distances[edge.Target])
+                //        {
+                //            distances[edge.Target] = distanceThroughCurrentNode;
+                //            times[edge.Target] = timeThroughCurrentNode;
+                //            previousNodes[edge.Target] = currentNode;
+                //        }
+                //    }
+
+                //}
                 foreach (RoadEdge edge in roadMap.Edges)
                 {
                     if (edge.Source == currentNode)
                     {
                         double distanceThroughCurrentNode = distances[currentNode] + edge.LengthM;
-                        double timeThroughCurrentNode = times[currentNode] + edge.LengthM / (edge.SpeedLimit*5/18);
+                        double timeThroughCurrentNode = times[currentNode] + edge.LengthM / (edge.SpeedLimit * 5 / 18);
 
                         if (distanceThroughCurrentNode < distances[edge.Target])
                         {
                             distances[edge.Target] = distanceThroughCurrentNode;
                             times[edge.Target] = timeThroughCurrentNode;
                             previousNodes[edge.Target] = currentNode;
+
+                            // Добавление пройденного ребра в список pathEdge
+                            if (previousNodes[edge.Target] == currentNode)
+                            {
+                                pathEdge.Add(edge);
+                            }
                         }
                     }
                 }
+
             }
 
             List<RoadNode> path = BuildPath(targetNode, previousNodes);
             return new ShortestPathResult
             {
                 PathNode = path,
+                PathEdge = pathEdge,
                 Distance = distances[targetNode],
                 Time = times[targetNode]
             };
