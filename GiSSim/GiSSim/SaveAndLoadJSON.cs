@@ -10,6 +10,7 @@ using QuickGraph;
 
 namespace GiSSim
 {
+    //загрузка или сохранение карты
     public class SaveAndLoadJSON
     {
         public static void SaveGraphToJSON(RoadMap roadGraph, string filePath)

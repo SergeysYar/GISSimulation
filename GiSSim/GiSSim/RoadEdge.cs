@@ -7,6 +7,7 @@ using QuickGraph;
 
 namespace GiSSim
 {
+    //класс конструктора квартала
     public class RoadEdge
     {
         public int Id { get; private set; }

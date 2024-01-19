@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GiSSim
 {
+    //класс создания рандомных путей
     public class RandomPathGenerator
     {
         public static List<Tuple<RoadEdge, RoadEdge>> GenerateRandomPaths(RoadMap roadMap)

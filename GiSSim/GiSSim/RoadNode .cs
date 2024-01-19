@@ -7,6 +7,7 @@ using QuickGraph;
 
 namespace GiSSim
 {
+    //класс конструктора узла
     public class RoadNode
     {
         public int Id { get; set; }

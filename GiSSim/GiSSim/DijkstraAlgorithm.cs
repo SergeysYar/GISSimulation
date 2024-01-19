@@ -9,78 +9,7 @@ using System.Xml.Linq;
 namespace GiSSim
 {
 
-    //public class DijkstraAlgorithm
-    //{
-    //    public List<RoadNode> FindShortestPath(RoadMap roadMap, RoadNode startNode, RoadNode targetNode)
-    //    {
-    //        Dictionary<RoadNode, double> distances = new Dictionary<RoadNode, double>();
-    //        Dictionary<RoadNode, RoadNode> previousNodes = new Dictionary<RoadNode, RoadNode>();
-    //        List<RoadNode> unvisitedNodes = new List<RoadNode>();
-
-    //        foreach (RoadNode node in roadMap.Nodes)
-    //        {
-    //            distances[node] = double.MaxValue;
-    //            previousNodes[node] = null;
-    //            unvisitedNodes.Add(node);
-    //        }
-
-    //        distances[startNode] = 0;
-
-    //        while (unvisitedNodes.Count > 0)
-    //        {
-    //            RoadNode currentNode = GetNodeWithMinDistance(distances, unvisitedNodes);
-    //            unvisitedNodes.Remove(currentNode);
-
-    //            if (currentNode == targetNode)
-    //                break;
-
-    //            foreach (RoadEdge edge in roadMap.Edges)
-    //            {
-    //                if (edge.Source == currentNode)
-    //                {
-    //                    double distanceThroughCurrentNode = distances[currentNode] + edge.LengthM;
-    //                    if (distanceThroughCurrentNode < distances[edge.Target])
-    //                    {
-    //                        distances[edge.Target] = distanceThroughCurrentNode;
-    //                        previousNodes[edge.Target] = currentNode;
-    //                    }
-    //                }
-    //            }
-    //        }
-
-    //        return BuildPath(targetNode, previousNodes);
-    //    }
-
-    //    private RoadNode GetNodeWithMinDistance(Dictionary<RoadNode, double> distances, List<RoadNode> nodes)
-    //    {
-    //        double minDistance = double.MaxValue;
-    //        RoadNode minNode = null;
-
-    //        foreach (RoadNode node in nodes)
-    //        {
-    //            if (distances[node] < minDistance)
-    //            {
-    //                minDistance = distances[node];
-    //                minNode = node;
-    //            }
-    //        }
-
-    //        return minNode;
-    //    }
-
-    //    private List<RoadNode> BuildPath(RoadNode targetNode, Dictionary<RoadNode, RoadNode> previousNodes)
-    //    {
-    //        List<RoadNode> path = new List<RoadNode>();
-    //        RoadNode currentNode = targetNode;
-
-    //        while (currentNode != null)
-    //        {
-    //            path.Insert(0, currentNode);
-    //            currentNode = previousNodes[currentNode];
-    //        }
-
-    //        return path;
-    //    }
+  //класс поиска кратчайшего пути, с помощью дейкстры 
     public class DijkstraAlgorithm
     {
         // Результат, содержащий путь, расстояние и время
