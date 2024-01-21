@@ -207,48 +207,77 @@ public class Program
                 Console.WriteLine(node.NameGap);
             }
         }
-        //List<Tuple<RoadEdge, RoadEdge>> paths = RandomPathGenerator.GenerateRandomPaths(roadMap);
-        //int i = 0;
-        //foreach (var item in paths)
-        //{
-        //    //Console.WriteLine(item.Item1.NameGap + "\t" + item.Item2.NameGap);
-        //    //Console.WriteLine(item.Item1.NameGap + "\t" + item.Item2.NameGap);
+        Car car1 = new Car("Car 1", new List<RoadEdge> { /* Добавьте промежутки для машины 1 */ });
+        Car car2 = new Car("Car 2", new List<RoadEdge> { /* Добавьте промежутки для машины 2 */ });
 
+        Simulation simulation = new Simulation(roadMap, 5);
+        simulation.AddCar(car1);
+        simulation.AddCar(car2);
+        List<SimulationState> simulationStates = simulation.RunSimulation();
 
-        //    Console.WriteLine("Информация по пути " + i);
-        //    i++;
+        // Вывод результатов
+        foreach (SimulationState state in simulationStates)
+        {
+            Console.WriteLine($"Iteration {state.Iteration}:");
+            foreach (CarState carState in state.CarStates)
+            {
+                Console.WriteLine($"Car {carState.CarName} is on edge {carState.CurrentEdgeName}");
+            }
 
-        //    DijkstraAlgorithmEdge dijkstra = new DijkstraAlgorithmEdge();
+            foreach (KeyValuePair<string, int> additionalTime in state.AdditionalTimes)
+            {
+                Console.WriteLine($"Traffic congestion on edge {additionalTime.Key}. Increased travel time by {additionalTime.Value} seconds.");
+            }
 
-        //    // Находим кратчайший путь
-        //    List<RoadEdge> shortestPath = dijkstra.FindShortestPath(roadMap.Nodes, roadMap.Edges, item.Item1.Source, item.Item1.Target);
+            foreach (KeyValuePair<string, double> edgeCongestion in state.EdgeCongestion)
+            {
+                Console.WriteLine($"Edge {edgeCongestion.Key} congestion: {edgeCongestion.Value * 100}%");
+            }
 
-        //    // Выводим кратчайший путь
-        //    if (shortestPath != null)
-        //    {
-        //        Console.WriteLine("Shortest path:");
-        //        foreach (RoadEdge edge in shortestPath)
-        //        {
-        //            Console.WriteLine($"{edge.NameGap} ({edge.Source.streetNames} -> {edge.Target.streetNames})");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("No path found.");
-        //    }
-        //}
-
-
-        //DijkstraAlgorithm dijkstra = new DijkstraAlgorithm();
-        //RoadNode startNode = edge3.Target;
-        //RoadNode targetNode = edge8.Source;
-        //DijkstraAlgorithm.ShortestPathResult result = dijkstra.FindShortestPath(roadMap, startNode, targetNode);
-
-        //Console.WriteLine($"Длина пути: {result.Distance} метров");
-        //Console.WriteLine($"Время в пути: {result.Time} секунд");
-        //foreach (var node in result.Path)
-        //{
-        //    Console.WriteLine(node.streetNames);
-        //}
+            Console.WriteLine();
+        }
     }
+    //List<Tuple<RoadEdge, RoadEdge>> paths = RandomPathGenerator.GenerateRandomPaths(roadMap);
+    //int i = 0;
+    //foreach (var item in paths)
+    //{
+    //    //Console.WriteLine(item.Item1.NameGap + "\t" + item.Item2.NameGap);
+    //    //Console.WriteLine(item.Item1.NameGap + "\t" + item.Item2.NameGap);
+
+
+    //    Console.WriteLine("Информация по пути " + i);
+    //    i++;
+
+    //    DijkstraAlgorithmEdge dijkstra = new DijkstraAlgorithmEdge();
+
+    //    // Находим кратчайший путь
+    //    List<RoadEdge> shortestPath = dijkstra.FindShortestPath(roadMap.Nodes, roadMap.Edges, item.Item1.Source, item.Item1.Target);
+
+    //    // Выводим кратчайший путь
+    //    if (shortestPath != null)
+    //    {
+    //        Console.WriteLine("Shortest path:");
+    //        foreach (RoadEdge edge in shortestPath)
+    //        {
+    //            Console.WriteLine($"{edge.NameGap} ({edge.Source.streetNames} -> {edge.Target.streetNames})");
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Console.WriteLine("No path found.");
+    //    }
+    //}
+
+
+    //DijkstraAlgorithm dijkstra = new DijkstraAlgorithm();
+    //RoadNode startNode = edge3.Target;
+    //RoadNode targetNode = edge8.Source;
+    //DijkstraAlgorithm.ShortestPathResult result = dijkstra.FindShortestPath(roadMap, startNode, targetNode);
+
+    //Console.WriteLine($"Длина пути: {result.Distance} метров");
+    //Console.WriteLine($"Время в пути: {result.Time} секунд");
+    //foreach (var node in result.Path)
+    //{
+    //    Console.WriteLine(node.streetNames);
+    //}
 }
