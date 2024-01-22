@@ -18,8 +18,8 @@ public class Program
         RoadNode nodeC = new RoadNode(3, "Intersection C");
         RoadNode nodeD = new RoadNode(4, "Intersection D");
         RoadNode nodeE = new RoadNode(5, "Intersection E");
-        RoadNode nodeF = new RoadNode(6, "Intersection F");
-        RoadNode nodeG = new RoadNode(7, "Intersection G");
+        //  RoadNode nodeF = new RoadNode(6, "Intersection F");
+        //  RoadNode nodeG = new RoadNode(7, "Intersection G");
 
 
         RoadEdge edge1 = new RoadEdge.Builder()
@@ -31,139 +31,224 @@ public class Program
             .WithLanes(2)
             .WithLengthM(150)
             .WithSpeedLimit(50)
-            .WithIncoming(15)
-            .WithOutgoing(10)
+            .WithIncoming(10)
+            .WithOutgoing(5)
             .Build();
 
         RoadEdge edge2 = new RoadEdge.Builder()
-            .WithId(2)
-            .WithNameGap("Street B-C")
-            .WithSource(nodeB)
-            .WithTarget(nodeC)
-            .WithTrafficLightTimeSecond(20)
-            .WithLanes(2)
-            .WithLengthM(200)
-            .WithSpeedLimit(50)
+    .WithId(1)
+    .WithNameGap("Street B-A")
+    .WithSource(nodeB)
+    .WithTarget(nodeA)
+    .WithTrafficLightTimeSecond(30)
+    .WithLanes(2)
+    .WithLengthM(150)
+    .WithSpeedLimit(50)
             .WithIncoming(10)
-            .WithOutgoing(10)
-            .Build();
-
+            .WithOutgoing(5)
+    .Build();
         RoadEdge edge3 = new RoadEdge.Builder()
-            .WithId(3)
-            .WithNameGap("Street C-D")
-            .WithSource(nodeC)
-            .WithTarget(nodeD)
-            .WithTrafficLightTimeSecond(25)
-            .WithLanes(2)
-            .WithLengthM(300)
-            .WithSpeedLimit(40)
-            .WithIncoming(15)
-            .WithOutgoing(10)
-            .Build();
-
+    .WithId(1)
+    .WithNameGap("Street B-C")
+    .WithSource(nodeB)
+    .WithTarget(nodeC)
+    .WithTrafficLightTimeSecond(30)
+    .WithLanes(2)
+    .WithLengthM(150)
+    .WithSpeedLimit(50)
+            .WithIncoming(10)
+            .WithOutgoing(5)
+    .Build();
         RoadEdge edge4 = new RoadEdge.Builder()
-            .WithId(4)
-            .WithNameGap("Street A-D")
-            .WithSource(nodeA)
-            .WithTarget(nodeD)
-            .WithTrafficLightTimeSecond(40)
-            .WithLanes(3)
-            .WithLengthM(400)
-            .WithSpeedLimit(60)
-             .WithIncoming(10)
-            .WithOutgoing(10)
-            .Build();
-
+    .WithId(1)
+    .WithNameGap("Street C-B")
+    .WithSource(nodeC)
+    .WithTarget(nodeB)
+    .WithTrafficLightTimeSecond(30)
+    .WithLanes(2)
+    .WithLengthM(150)
+    .WithSpeedLimit(50)
+            .WithIncoming(10)
+            .WithOutgoing(5)
+    .Build();
         RoadEdge edge5 = new RoadEdge.Builder()
-            .WithId(5)
-            .WithNameGap("Street D-E")
-            .WithSource(nodeD)
-            .WithTarget(nodeE)
-            .WithTrafficLightTimeSecond(15)
-            .WithLanes(2)
-            .WithLengthM(250)
-            .WithSpeedLimit(50)
+    .WithId(1)
+    .WithNameGap("Street C-E")
+    .WithSource(nodeC)
+    .WithTarget(nodeE)
+    .WithTrafficLightTimeSecond(30)
+    .WithLanes(2)
+    .WithLengthM(150)
+    .WithSpeedLimit(50)
             .WithIncoming(10)
-            .WithOutgoing(10)
-            .Build();
-
+            .WithOutgoing(5)
+    .Build();
         RoadEdge edge6 = new RoadEdge.Builder()
-            .WithId(6)
-            .WithNameGap("Street C-E")
-            .WithSource(nodeC)
-            .WithTarget(nodeE)
-            .WithTrafficLightTimeSecond(15)
-            .WithLanes(2)
-            .WithLengthM(250)
-            .WithSpeedLimit(50)
+    .WithId(1)
+    .WithNameGap("Street E-D")
+    .WithSource(nodeE)
+    .WithTarget(nodeD)
+    .WithTrafficLightTimeSecond(30)
+    .WithLanes(2)
+    .WithLengthM(150)
+    .WithSpeedLimit(50)
             .WithIncoming(10)
-            .WithOutgoing(10)
-            .Build();
+            .WithOutgoing(5)
+    .Build();
+        RoadEdge edge7 = new RoadEdge.Builder()
+    .WithId(1)
+    .WithNameGap("Street D-B")
+    .WithSource(nodeD)
+    .WithTarget(nodeB)
+    .WithTrafficLightTimeSecond(30)
+    .WithLanes(2)
+    .WithLengthM(150)
+    .WithSpeedLimit(50)
+            .WithIncoming(10)
+            .WithOutgoing(5)
+    .Build();
+        RoadEdge edge8 = new RoadEdge.Builder()
+    .WithId(1)
+    .WithNameGap("Street D-A")
+    .WithSource(nodeD)
+    .WithTarget(nodeA)
+    .WithTrafficLightTimeSecond(30)
+    .WithLanes(2)
+    .WithLengthM(150)
+    .WithSpeedLimit(50)
+            .WithIncoming(10)
+            .WithOutgoing(5)
+    .Build();
 
-       RoadEdge edge7 = new RoadEdge.Builder()
-        .WithId(7)
-        .WithNameGap("Street B-E")
-        .WithSource(nodeB)
-        .WithTarget(nodeE)
-        .WithTrafficLightTimeSecond(15)
-        .WithLanes(2)
-        .WithLengthM(250)
-        .WithSpeedLimit(50)
-        .WithIncoming(10)
-        .WithOutgoing(10)
-        .Build();
+        //  RoadEdge edge2 = new RoadEdge.Builder()
+        //      .WithId(2)
+        //      .WithNameGap("Street B-C")
+        //      .WithSource(nodeB)
+        //      .WithTarget(nodeC)
+        //      .WithTrafficLightTimeSecond(20)
+        //      .WithLanes(2)
+        //      .WithLengthM(200)
+        //      .WithSpeedLimit(50)
+        //      .WithIncoming(10)
+        //      .WithOutgoing(10)
+        //      .Build();
 
-      RoadEdge edge8 = new RoadEdge.Builder()
-        .WithId(8)
-        .WithNameGap("Street B-F")
-        .WithSource(nodeB)
-        .WithTarget(nodeF)
-        .WithTrafficLightTimeSecond(15)
-        .WithLanes(2)
-        .WithLengthM(250)
-        .WithSpeedLimit(50)
-        .WithIncoming(20)
-        .WithOutgoing(10)
-        .Build();
+        //  RoadEdge edge3 = new RoadEdge.Builder()
+        //      .WithId(3)
+        //      .WithNameGap("Street C-D")
+        //      .WithSource(nodeC)
+        //      .WithTarget(nodeD)
+        //      .WithTrafficLightTimeSecond(25)
+        //      .WithLanes(2)
+        //      .WithLengthM(300)
+        //      .WithSpeedLimit(40)
+        //      .WithIncoming(15)
+        //      .WithOutgoing(10)
+        //      .Build();
 
-        RoadEdge edge9 = new RoadEdge.Builder()
-        .WithId(9)
-        .WithNameGap("Street F-E")
-        .WithSource(nodeF)
-        .WithTarget(nodeE)
-        .WithTrafficLightTimeSecond(15)
-        .WithLanes(2)
-        .WithLengthM(250)
-        .WithSpeedLimit(50)
-        .WithIncoming(10)
-        .WithOutgoing(10)
-        .Build();
+        //  RoadEdge edge4 = new RoadEdge.Builder()
+        //      .WithId(4)
+        //      .WithNameGap("Street A-D")
+        //      .WithSource(nodeA)
+        //      .WithTarget(nodeD)
+        //      .WithTrafficLightTimeSecond(40)
+        //      .WithLanes(3)
+        //      .WithLengthM(400)
+        //      .WithSpeedLimit(60)
+        //       .WithIncoming(10)
+        //      .WithOutgoing(10)
+        //      .Build();
 
-        RoadEdge edge10 = new RoadEdge.Builder()
-        .WithId(10)
-        .WithNameGap("Street F-G")
-        .WithSource(nodeF)
-        .WithTarget(nodeG)
-        .WithTrafficLightTimeSecond(15)
-        .WithLanes(2)
-        .WithLengthM(250)
-        .WithSpeedLimit(50)
-        .WithIncoming(10)
-        .WithOutgoing(10)
-        .Build();
+        //  RoadEdge edge5 = new RoadEdge.Builder()
+        //      .WithId(5)
+        //      .WithNameGap("Street D-E")
+        //      .WithSource(nodeD)
+        //      .WithTarget(nodeE)
+        //      .WithTrafficLightTimeSecond(15)
+        //      .WithLanes(2)
+        //      .WithLengthM(250)
+        //      .WithSpeedLimit(50)
+        //      .WithIncoming(10)
+        //      .WithOutgoing(10)
+        //      .Build();
 
-        RoadEdge edge11 = new RoadEdge.Builder()
-       .WithId(11)
-       .WithNameGap("Street G-E")
-       .WithSource(nodeG)
-       .WithTarget(nodeE)
-       .WithTrafficLightTimeSecond(15)
-       .WithLanes(2)
-       .WithLengthM(250)
-       .WithSpeedLimit(50)
-       .WithIncoming(10)
-       .WithOutgoing(10)
-       .Build();
+        //  RoadEdge edge6 = new RoadEdge.Builder()
+        //      .WithId(6)
+        //      .WithNameGap("Street C-E")
+        //      .WithSource(nodeC)
+        //      .WithTarget(nodeE)
+        //      .WithTrafficLightTimeSecond(15)
+        //      .WithLanes(2)
+        //      .WithLengthM(250)
+        //      .WithSpeedLimit(50)
+        //      .WithIncoming(10)
+        //      .WithOutgoing(10)
+        //      .Build();
+
+        // RoadEdge edge7 = new RoadEdge.Builder()
+        //  .WithId(7)
+        //  .WithNameGap("Street B-E")
+        //  .WithSource(nodeB)
+        //  .WithTarget(nodeE)
+        //  .WithTrafficLightTimeSecond(15)
+        //  .WithLanes(2)
+        //  .WithLengthM(250)
+        //  .WithSpeedLimit(50)
+        //  .WithIncoming(10)
+        //  .WithOutgoing(10)
+        //  .Build();
+
+        //RoadEdge edge8 = new RoadEdge.Builder()
+        //  .WithId(8)
+        //  .WithNameGap("Street B-F")
+        //  .WithSource(nodeB)
+        //  .WithTarget(nodeF)
+        //  .WithTrafficLightTimeSecond(15)
+        //  .WithLanes(2)
+        //  .WithLengthM(250)
+        //  .WithSpeedLimit(50)
+        //  .WithIncoming(20)
+        //  .WithOutgoing(10)
+        //  .Build();
+
+        //  RoadEdge edge9 = new RoadEdge.Builder()
+        //  .WithId(9)
+        //  .WithNameGap("Street F-E")
+        //  .WithSource(nodeF)
+        //  .WithTarget(nodeE)
+        //  .WithTrafficLightTimeSecond(15)
+        //  .WithLanes(2)
+        //  .WithLengthM(250)
+        //  .WithSpeedLimit(50)
+        //  .WithIncoming(10)
+        //  .WithOutgoing(10)
+        //  .Build();
+
+        //  RoadEdge edge10 = new RoadEdge.Builder()
+        //  .WithId(10)
+        //  .WithNameGap("Street F-G")
+        //  .WithSource(nodeF)
+        //  .WithTarget(nodeG)
+        //  .WithTrafficLightTimeSecond(15)
+        //  .WithLanes(2)
+        //  .WithLengthM(250)
+        //  .WithSpeedLimit(50)
+        //  .WithIncoming(10)
+        //  .WithOutgoing(10)
+        //  .Build();
+
+        //  RoadEdge edge11 = new RoadEdge.Builder()
+        // .WithId(11)
+        // .WithNameGap("Street G-E")
+        // .WithSource(nodeG)
+        // .WithTarget(nodeE)
+        // .WithTrafficLightTimeSecond(15)
+        // .WithLanes(2)
+        // .WithLengthM(250)
+        // .WithSpeedLimit(50)
+        // .WithIncoming(10)
+        // .WithOutgoing(10)
+        // .Build();
 
         RoadMap roadMap = new RoadMap.Builder("Моя карта дорог")
         .AddNode(nodeA)
@@ -171,8 +256,6 @@ public class Program
         .AddNode(nodeC)
         .AddNode(nodeD)
         .AddNode(nodeE)
-        .AddNode(nodeF)
-        .AddNode(nodeG)
         .AddEdge(edge1)
         .AddEdge(edge2)
         .AddEdge(edge3)
@@ -181,12 +264,11 @@ public class Program
          .AddEdge(edge6)
          .AddEdge(edge7)
          .AddEdge(edge8)
-         .AddEdge(edge9)
-         .AddEdge(edge10)
-         .AddEdge(edge11)
         .Build();
 
+
         List<Tuple<RoadEdge, RoadEdge>> paths = RandomPathGenerator.GenerateRandomPaths(roadMap);
+        List<DijkstraAlgorithm.ShortestPathResult> DijPathList = new List<DijkstraAlgorithm.ShortestPathResult>();//список всего, что вернула дейкстра
         int i = 0;
         foreach (var item in paths)
         {
@@ -199,7 +281,7 @@ public class Program
             RoadNode startNode = item.Item1.Source;
             RoadNode targetNode = item.Item2.Target;
             DijkstraAlgorithm.ShortestPathResult result = dijkstra.FindShortestPath(roadMap, startNode, targetNode);
-
+            DijPathList.Add(result);
             Console.WriteLine($"Длина пути: {result.Distance} метров");
             Console.WriteLine($"Время в пути: {result.Time} секунд");
             foreach (var node in result.PathEdge)
@@ -207,12 +289,21 @@ public class Program
                 Console.WriteLine(node.NameGap);
             }
         }
-        Car car1 = new Car("Car 1", new List<RoadEdge> { /* Добавьте промежутки для машины 1 */ });
-        Car car2 = new Car("Car 2", new List<RoadEdge> { /* Добавьте промежутки для машины 2 */ });
+        List<Car> cars = new List<Car>();
+        int j = 0;
+        foreach (var item in DijPathList)//создание машин
+        {
+            Car car = new Car(j, item.PathEdge);
+            cars.Add(car);
+            j++;
+        }
+
 
         Simulation simulation = new Simulation(roadMap, 5);
-        simulation.AddCar(car1);
-        simulation.AddCar(car2);
+        foreach (var item in cars)//добавление их в симуляцию
+        {
+            simulation.AddCar(item);
+        }
         List<SimulationState> simulationStates = simulation.RunSimulation();
 
         // Вывод результатов
@@ -236,6 +327,7 @@ public class Program
 
             Console.WriteLine();
         }
+        Console.ReadKey();
     }
     //List<Tuple<RoadEdge, RoadEdge>> paths = RandomPathGenerator.GenerateRandomPaths(roadMap);
     //int i = 0;

@@ -12,7 +12,7 @@ namespace GiSSim
         public static List<Tuple<RoadEdge, RoadEdge>> GenerateRandomPaths(RoadMap roadMap)
         {
             List<Tuple<RoadEdge, RoadEdge>> paths = new List<Tuple<RoadEdge, RoadEdge>>();
-            int[] occupied = new int[roadMap.Edges.Count];
+            int[] occupied = new int[roadMap.Edges.Count];//массив занятых
             Random rnd = new Random();
             foreach (var edge in roadMap.Edges)
             {
@@ -20,7 +20,7 @@ namespace GiSSim
                 while (i< edge.Outgoing)
                 {
                     int random = rnd.Next(roadMap.Edges.Count);
-                    if (occupied[random] != roadMap.Edges[random].Incoming && edge.Id!= roadMap.Edges[random].Id)
+                    if (occupied[random] < roadMap.Edges[random].Incoming && edge.Source.Id != roadMap.Edges[random].Target.Id) 
                     {
                         occupied[random]++;
                         i++;

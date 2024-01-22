@@ -8,10 +8,10 @@ namespace GiSSim
 {
     public class Car
     {
-        public string Name { get; private set; }    
+        public int Name { get; private set; }    
         public List<RoadEdge> Path { get; private set; }
         public int CurrentEdgeIndex { get; private set; }
-        public Car(string name, List<RoadEdge> path) 
+        public Car(int name, List<RoadEdge> path) 
         { 
             Name = name;
             Path= path; 

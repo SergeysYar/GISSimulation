@@ -40,18 +40,27 @@ namespace GiSSim
                     RoadEdge currentEdge = car.GetCurrentEdge();
                     state.CarStates.Add(new CarState(car.Name, currentEdge.NameGap));
 
-                    // Check if the number of cars on the current edge exceeds its capacity
-                    if (currentEdge.Incoming > currentEdge.Lanes)
-                    {
+                    //Проверьте, не превышает ли количество автомобилей на текущем ребре его пропускную способность
+                    //if (currentEdge.Incoming > currentEdge.Lanes)
+                    //{
                         double congestionPercentage = (double)currentEdge.Incoming / currentEdge.Lanes;
                         int additionalTime = (int)(currentEdge.TraficLightTimeSecond * congestionPercentage);
-                        state.AdditionalTimes.Add(currentEdge.NameGap, additionalTime);
-                    }
+                        if (!state.AdditionalTimes.ContainsKey(currentEdge.NameGap))
+                        {
+                            state.AdditionalTimes.Add(currentEdge.NameGap, additionalTime);
+                        }
+                        else
+                        {
+                            // Ключ уже существует, обновим значение
+                            state.AdditionalTimes[currentEdge.NameGap] = additionalTime;
+                        }
+
+                    //}
 
                     car.MoveToNextEdge();
                 }
 
-                // Calculate edge congestion
+                // Вычислить перегрузку
                 foreach (RoadEdge edge in RoadMap.Edges)
                 {
                     double congestionPercentage = (double)edge.Incoming / edge.Lanes;
@@ -83,10 +92,10 @@ namespace GiSSim
 
     public class CarState
     {
-        public string CarName { get; }
+        public int CarName { get; }
         public string CurrentEdgeName { get; }
 
-        public CarState(string carName, string currentEdgeName)
+        public CarState(int carName, string currentEdgeName)
         {
             CarName = carName;
             CurrentEdgeName = currentEdgeName;
