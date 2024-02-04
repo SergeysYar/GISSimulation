@@ -309,10 +309,10 @@ public class Program
         // Вывод результатов
         foreach (SimulationState state in simulationStates)
         {
-            Console.WriteLine($"Iteration {state.Iteration}:");
+            Console.WriteLine($"Итерация {state.Iteration}:");
             foreach (CarState carState in state.CarStates)
             {
-                Console.WriteLine($"Car {carState.CarName} is on edge {carState.CurrentEdgeName}");
+                Console.WriteLine($"машина {carState.CarName} на дороге {carState.CurrentEdgeName}");
             }
 
             foreach (KeyValuePair<string, int> additionalTime in state.AdditionalTimes)
@@ -322,7 +322,7 @@ public class Program
 
             foreach (KeyValuePair<string, double> edgeCongestion in state.EdgeCongestion)
             {
-                Console.WriteLine($"Edge {edgeCongestion.Key} congestion: {edgeCongestion.Value * 100}%");
+                Console.WriteLine($"дорога {edgeCongestion.Key} загруженность: {edgeCongestion.Value}");
             }
 
             Console.WriteLine();

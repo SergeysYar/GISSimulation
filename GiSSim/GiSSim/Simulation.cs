@@ -28,6 +28,7 @@ namespace GiSSim
 
         public List<SimulationState> RunSimulation()
         {
+            Dictionary<string, int> CarCountsByEdge = new Dictionary<string, int>();//количество машин
             simulationStates.Clear();
 
             for (int i = 0; i < iterationStep; i++)
@@ -56,15 +57,33 @@ namespace GiSSim
                         }
 
                     //}
-
+                    // Сохранение количества машин на текущем ребре
+                    if (!state.CarCountsByEdge.ContainsKey(currentEdge.NameGap))
+                    {
+                        state.CarCountsByEdge.Add(currentEdge.NameGap, 1);
+                    }
+                    else
+                    {
+                        state.CarCountsByEdge[currentEdge.NameGap]++;
+                    }
+                    CarCountsByEdge = state.CarCountsByEdge;
                     car.MoveToNextEdge();
                 }
 
                 // Вычислить перегрузку
                 foreach (RoadEdge edge in RoadMap.Edges)
                 {
-                    double congestionPercentage = (double)edge.Incoming / edge.Lanes;
-                    state.EdgeCongestion.Add(edge.NameGap, congestionPercentage);
+                    double bandWidth = 2.5;//ширина полосы
+                    double trafficDensity = 1000/edge.SpeedLimit / 2;//плотность движения
+                    double bandwidthOneLane = bandWidth * trafficDensity * edge.SpeedLimit;//пропускная способность одной полосы
+                    int numberCars;
+                    if (CarCountsByEdge.ContainsKey(edge.NameGap))//проверка на наличие дороги
+                    {
+                        numberCars = CarCountsByEdge[edge.NameGap];//количество мащин
+                        double trafficCongestionFactor = (double)numberCars / (edge.Lanes * bandwidthOneLane);//расчёт коэфициента загруженности дороги
+                        state.EdgeCongestion.Add(edge.NameGap, trafficCongestionFactor);
+                    }
+
                 }
 
                 simulationStates.Add(state);
@@ -78,12 +97,14 @@ namespace GiSSim
     {
         public int Iteration { get; set; }
         public List<CarState> CarStates { get; }
+        public Dictionary<string, int> CarCountsByEdge { get; }//количество машин
         public Dictionary<string, int> AdditionalTimes { get; }
         public Dictionary<string, double> EdgeCongestion { get; }
 
         public SimulationState()
         {
             CarStates = new List<CarState>();
+            CarCountsByEdge = new Dictionary<string, int>();//иницилизаци количество машин
             AdditionalTimes = new Dictionary<string, int>();
             EdgeCongestion = new Dictionary<string, double>();
         }
