@@ -11,12 +11,14 @@ namespace GiSSim
         private RoadMap RoadMap;
         private List<Car> cars;
         private int iterationStep;
+        private int minute;
         private List<SimulationState> simulationStates;
 
-        public Simulation(RoadMap roadMap, int iterationStep)
+        public Simulation(RoadMap roadMap, int iterationStep, int minute)
         {
             RoadMap = roadMap;
             this.iterationStep = iterationStep;
+            this.minute = minute;
             this.cars = new List<Car>();
             this.simulationStates = new List<SimulationState>();
         }
@@ -41,9 +43,7 @@ namespace GiSSim
                     RoadEdge currentEdge = car.GetCurrentEdge();
                     state.CarStates.Add(new CarState(car.Name, currentEdge.NameGap));
 
-                    //Проверьте, не превышает ли количество автомобилей на текущем ребре его пропускную способность
-                    //if (currentEdge.Incoming > currentEdge.Lanes)
-                    //{
+                   
                         double congestionPercentage = (double)currentEdge.Incoming / currentEdge.Lanes;
                         int additionalTime = (int)(currentEdge.TraficLightTimeSecond * congestionPercentage);
                         if (!state.AdditionalTimes.ContainsKey(currentEdge.NameGap))
@@ -56,7 +56,7 @@ namespace GiSSim
                             state.AdditionalTimes[currentEdge.NameGap] = additionalTime;
                         }
 
-                    //}
+
                     // Сохранение количества машин на текущем ребре
                     if (!state.CarCountsByEdge.ContainsKey(currentEdge.NameGap))
                     {
@@ -67,6 +67,11 @@ namespace GiSSim
                         state.CarCountsByEdge[currentEdge.NameGap]++;
                     }
                     CarCountsByEdge = state.CarCountsByEdge;
+                    car.TimeOnCurrentEdge += minute;
+                    // Увеличение времени нахождения машины на данной улице в зависимости от коэффициента загруженности
+                    int additionalTimeOnEdge = (int)(congestionPercentage * car.TimeOnCurrentEdge);
+                    car.TimeOnCurrentEdge += additionalTimeOnEdge;
+
                     car.MoveToNextEdge();
                 }
 

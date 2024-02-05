@@ -31,8 +31,8 @@ public class Program
             .WithLanes(2)
             .WithLengthM(150)
             .WithSpeedLimit(50)
-            .WithIncoming(10)
-            .WithOutgoing(5)
+            .WithIncoming(1000)
+            .WithOutgoing(750)
             .Build();
 
         RoadEdge edge2 = new RoadEdge.Builder()
@@ -44,8 +44,8 @@ public class Program
     .WithLanes(2)
     .WithLengthM(150)
     .WithSpeedLimit(50)
-            .WithIncoming(10)
-            .WithOutgoing(5)
+            .WithIncoming(100)
+            .WithOutgoing(75)
     .Build();
         RoadEdge edge3 = new RoadEdge.Builder()
     .WithId(1)
@@ -56,8 +56,8 @@ public class Program
     .WithLanes(2)
     .WithLengthM(150)
     .WithSpeedLimit(50)
-            .WithIncoming(10)
-            .WithOutgoing(5)
+            .WithIncoming(1000)
+            .WithOutgoing(750)
     .Build();
         RoadEdge edge4 = new RoadEdge.Builder()
     .WithId(1)
@@ -68,8 +68,8 @@ public class Program
     .WithLanes(2)
     .WithLengthM(150)
     .WithSpeedLimit(50)
-            .WithIncoming(10)
-            .WithOutgoing(5)
+            .WithIncoming(500)
+            .WithOutgoing(150)
     .Build();
         RoadEdge edge5 = new RoadEdge.Builder()
     .WithId(1)
@@ -80,8 +80,8 @@ public class Program
     .WithLanes(2)
     .WithLengthM(150)
     .WithSpeedLimit(50)
-            .WithIncoming(10)
-            .WithOutgoing(5)
+            .WithIncoming(2000)
+            .WithOutgoing(1550)
     .Build();
         RoadEdge edge6 = new RoadEdge.Builder()
     .WithId(1)
@@ -92,8 +92,8 @@ public class Program
     .WithLanes(2)
     .WithLengthM(150)
     .WithSpeedLimit(50)
-            .WithIncoming(10)
-            .WithOutgoing(5)
+            .WithIncoming(1000)
+            .WithOutgoing(75)
     .Build();
         RoadEdge edge7 = new RoadEdge.Builder()
     .WithId(1)
@@ -104,8 +104,8 @@ public class Program
     .WithLanes(2)
     .WithLengthM(150)
     .WithSpeedLimit(50)
-            .WithIncoming(10)
-            .WithOutgoing(5)
+            .WithIncoming(100)
+            .WithOutgoing(750)
     .Build();
         RoadEdge edge8 = new RoadEdge.Builder()
     .WithId(1)
@@ -116,8 +116,8 @@ public class Program
     .WithLanes(2)
     .WithLengthM(150)
     .WithSpeedLimit(50)
-            .WithIncoming(10)
-            .WithOutgoing(5)
+            .WithIncoming(1000)
+            .WithOutgoing(750)
     .Build();
 
         //  RoadEdge edge2 = new RoadEdge.Builder()
@@ -298,23 +298,23 @@ public class Program
             j++;
         }
 
-
-        Simulation simulation = new Simulation(roadMap, 5);
+        Console.WriteLine("количество машин:" + cars.Count);
+        Simulation simulation = new Simulation(roadMap, 10, 10);
         foreach (var item in cars)//добавление их в симуляцию
         {
             simulation.AddCar(item);
         }
         List<SimulationState> simulationStates = simulation.RunSimulation();
-
+        
         // Вывод результатов
         foreach (SimulationState state in simulationStates)
         {
             Console.WriteLine($"Итерация {state.Iteration}:");
-            foreach (CarState carState in state.CarStates)
-            {
-                Console.WriteLine($"машина {carState.CarName} на дороге {carState.CurrentEdgeName}");
-            }
-
+            //foreach (CarState carState in state.CarStates)
+            //{
+            //    Console.WriteLine($"машина {carState.CarName} на дороге {carState.CurrentEdgeName}");
+            //}
+            
             foreach (KeyValuePair<string, int> additionalTime in state.AdditionalTimes)
             {
                 Console.WriteLine($"Traffic congestion on edge {additionalTime.Key}. Increased travel time by {additionalTime.Value} seconds.");
