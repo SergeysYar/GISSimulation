@@ -12,10 +12,12 @@ namespace GiSSim
     {
         public int Id { get; set; }
         public string streetNames { get; set; }
-        public RoadNode(int id, string StreetNames)
+        public Vector2D Coordinates { get; private set; }
+        public RoadNode(int id, string StreetNames, Vector2D coordinates)
         {
             Id = id;
-            streetNames= StreetNames;
+            streetNames = StreetNames;
+            Coordinates = coordinates;
         }
     }
 }

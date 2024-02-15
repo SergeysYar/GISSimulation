@@ -13,11 +13,11 @@ public class Program
     public static void Main(string[] args)
     {
 
-        RoadNode nodeA = new RoadNode(1, "Intersection A");
-        RoadNode nodeB = new RoadNode(2, "Intersection B");
-        RoadNode nodeC = new RoadNode(3, "Intersection C");
-        RoadNode nodeD = new RoadNode(4, "Intersection D");
-        RoadNode nodeE = new RoadNode(5, "Intersection E");
+        RoadNode nodeA = new RoadNode(1, "Intersection A", new Vector2D(1,0));
+        RoadNode nodeB = new RoadNode(2, "Intersection B", new Vector2D(2, 0));
+        RoadNode nodeC = new RoadNode(3, "Intersection C", new Vector2D(1, 1));
+        RoadNode nodeD = new RoadNode(4, "Intersection D", new Vector2D(2, 1));
+        RoadNode nodeE = new RoadNode(5, "Intersection E", new Vector2D(5, 0));
         //  RoadNode nodeF = new RoadNode(6, "Intersection F");
         //  RoadNode nodeG = new RoadNode(7, "Intersection G");
 
@@ -114,8 +114,8 @@ public class Program
     .WithTarget(nodeA)
     .WithTrafficLightTimeSecond(30)
     .WithLanes(2)
-    .WithLengthM(150)
-    .WithSpeedLimit(50)
+    .WithLengthM(500)
+    .WithSpeedLimit(5)
             .WithIncoming(1000)
             .WithOutgoing(750)
     .Build();
@@ -299,7 +299,7 @@ public class Program
         }
 
         Console.WriteLine("количество машин:" + cars.Count);
-        Simulation simulation = new Simulation(roadMap, 10, 10);
+        Simulation simulation = new Simulation(roadMap, 5, 10);
         foreach (var item in cars)//добавление их в симуляцию
         {
             simulation.AddCar(item);
@@ -322,6 +322,7 @@ public class Program
 
             foreach (KeyValuePair<string, double> edgeCongestion in state.EdgeCongestion)
             {
+
                 Console.WriteLine($"дорога {edgeCongestion.Key} загруженность: {edgeCongestion.Value}");
             }
 

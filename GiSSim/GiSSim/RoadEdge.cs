@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QuickGraph;
 
+
 namespace GiSSim
 {
     //класс конструктора квартала
@@ -20,10 +21,12 @@ namespace GiSSim
         public int SpeedLimit { get; private set; }
         public int Incoming { get; private set; }
         public int Outgoing { get; private set; }
+        //public List<SimulationState>  SimulationStates { get; set; }
         public RoadEdge() {}
         public class Builder
         {
             private RoadEdge _roadEdge = new RoadEdge();
+            private List<SimulationState> SimulationStates = new List<SimulationState>();
 
             public Builder WithId(int id)
             {
@@ -84,7 +87,11 @@ namespace GiSSim
                 _roadEdge.Outgoing = outgoing;
                 return this;
             }
-
+            public Builder AddSimulationStates(SimulationState simulationState)
+            {
+                this.SimulationStates.Add(simulationState);
+                return this;
+            }
 
             public RoadEdge Build()
             {
