@@ -86,7 +86,7 @@ namespace GiSSim
                     {
                         numberCars = CarCountsByEdge[edge.NameGap];//количество мащин
                         double trafficCongestionFactor = (double)numberCars / (edge.Lanes * bandwidthOneLane);//расчёт коэфициента загруженности дороги
-                        state.EdgeCongestion.Add(edge.NameGap, trafficCongestionFactor);
+                        state.EdgeCongestion.Add(edge.Id, trafficCongestionFactor);
                     }
 
                 }
@@ -104,14 +104,14 @@ namespace GiSSim
         public List<CarState> CarStates { get; }
         public Dictionary<string, int> CarCountsByEdge { get; }//количество машин
         public Dictionary<string, int> AdditionalTimes { get; }
-        public Dictionary<string, double> EdgeCongestion { get; }
+        public Dictionary<int, double> EdgeCongestion { get; }
 
         public SimulationState()
         {
             CarStates = new List<CarState>();
             CarCountsByEdge = new Dictionary<string, int>();//иницилизаци количество машин
             AdditionalTimes = new Dictionary<string, int>();
-            EdgeCongestion = new Dictionary<string, double>();
+            EdgeCongestion = new Dictionary<int, double>();
         }
     }
 
