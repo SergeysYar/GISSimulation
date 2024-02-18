@@ -21,8 +21,12 @@ namespace GiSSim
         public int SpeedLimit { get; private set; }
         public int Incoming { get; private set; }
         public int Outgoing { get; private set; }
+        public List<double> WorkLoadsList { get; private set; }
         //public List<SimulationState>  SimulationStates { get; set; }
-        public RoadEdge() {}
+        public RoadEdge() 
+        {
+            WorkLoadsList= new List<double>();
+        }
         public class Builder
         {
             private RoadEdge _roadEdge = new RoadEdge();

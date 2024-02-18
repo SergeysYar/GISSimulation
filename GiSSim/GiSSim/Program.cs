@@ -23,7 +23,7 @@ public class Program
 
 
         RoadEdge edge1 = new RoadEdge.Builder()
-            .WithId(1)
+            .WithId(0)
             .WithNameGap("Street A-B")
             .WithSource(nodeA)
             .WithTarget(nodeB)
@@ -48,7 +48,7 @@ public class Program
             .WithOutgoing(75)
     .Build();
         RoadEdge edge3 = new RoadEdge.Builder()
-    .WithId(1)
+    .WithId(2)
     .WithNameGap("Street B-C")
     .WithSource(nodeB)
     .WithTarget(nodeC)
@@ -60,7 +60,7 @@ public class Program
             .WithOutgoing(750)
     .Build();
         RoadEdge edge4 = new RoadEdge.Builder()
-    .WithId(1)
+    .WithId(3)
     .WithNameGap("Street C-B")
     .WithSource(nodeC)
     .WithTarget(nodeB)
@@ -72,7 +72,7 @@ public class Program
             .WithOutgoing(150)
     .Build();
         RoadEdge edge5 = new RoadEdge.Builder()
-    .WithId(1)
+    .WithId(4)
     .WithNameGap("Street C-E")
     .WithSource(nodeC)
     .WithTarget(nodeE)
@@ -84,7 +84,7 @@ public class Program
             .WithOutgoing(1550)
     .Build();
         RoadEdge edge6 = new RoadEdge.Builder()
-    .WithId(1)
+    .WithId(5)
     .WithNameGap("Street E-D")
     .WithSource(nodeE)
     .WithTarget(nodeD)
@@ -96,7 +96,7 @@ public class Program
             .WithOutgoing(75)
     .Build();
         RoadEdge edge7 = new RoadEdge.Builder()
-    .WithId(1)
+    .WithId(6)
     .WithNameGap("Street D-B")
     .WithSource(nodeD)
     .WithTarget(nodeB)
@@ -108,7 +108,7 @@ public class Program
             .WithOutgoing(750)
     .Build();
         RoadEdge edge8 = new RoadEdge.Builder()
-    .WithId(1)
+    .WithId(7)
     .WithNameGap("Street D-A")
     .WithSource(nodeD)
     .WithTarget(nodeA)
@@ -320,7 +320,7 @@ public class Program
                 Console.WriteLine($"Traffic congestion on edge {additionalTime.Key}. Increased travel time by {additionalTime.Value} seconds.");
             }
 
-            foreach (KeyValuePair<string, double> edgeCongestion in state.EdgeCongestion)
+            foreach (KeyValuePair<int, double> edgeCongestion in state.EdgeCongestion)
             {
 
                 Console.WriteLine($"дорога {edgeCongestion.Key} загруженность: {edgeCongestion.Value}");
