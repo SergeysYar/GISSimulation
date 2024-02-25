@@ -14,22 +14,22 @@ namespace GiSSim
         {
             roadMap = new RoadMap.Builder(Name).Build();
         }
-        public void AddNode(int Id,string Name,double x, double y)
+        public void AddNode(string Name,double x, double y)
         {
-            RoadNode node = new RoadNode(Id, Name, new Vector2D(x, y));
+            RoadNode node = new RoadNode(roadMap.Nodes.Count, Name, new Vector2D(x, y));
             roadMap.Nodes.Add(node);
         }
         public void RemoveNode(RoadNode Node)
         {
             roadMap.Nodes.Remove(Node);
         }
-        public void AddEdge(int Id, string Name, RoadNode nodeA, RoadNode nodeB, int TrafficLightTimeSecond, int Lanes, int LengthM, int SpeedLimit, int IncomingCar, int OutgoingCar)
+        public void AddEdge(string Name, int nodeA, int nodeB, int TrafficLightTimeSecond, int Lanes, int LengthM, int SpeedLimit, int IncomingCar, int OutgoingCar)
         {
             RoadEdge edge = new RoadEdge.Builder()
-                        .WithId(Id)
+                        .WithId(roadMap.Edges.Count)
                         .WithNameGap(Name)
-                        .WithSource(nodeA)
-                        .WithTarget(nodeB)
+                        .WithSource(roadMap.Nodes[nodeA])
+                        .WithTarget(roadMap.Nodes[nodeB])
                         .WithTrafficLightTimeSecond(TrafficLightTimeSecond)
                         .WithLanes(Lanes)
                         .WithLengthM(LengthM)

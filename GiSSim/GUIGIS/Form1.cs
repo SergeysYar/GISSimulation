@@ -9,7 +9,7 @@ namespace GUIGIS
     public partial class Form1 : Form
     {
 
-        GiSSim.GiSSim giSSim = new("Моя карта");
+        GiSSim.GiSSim giSSim;
         RoadMap roadMap;
         //PictureBox pictureBox = new PictureBox();
         public Form1()
@@ -58,51 +58,51 @@ namespace GUIGIS
         }
         private void SettingsImage()
         {
-            Panel panel1 = new Panel();
-            panel1.AutoScroll = true;
-            panel1.AutoScrollMinSize = new Size(0, 0); // Может быть установлен на размер контента внутри Panel
-            panel1.Dock = DockStyle.Fill; // Или используйте Anchor для привязки к краям формы
 
-            splitContainer1.Panel1.Controls.Add(panel1);
-            panel1.AutoScroll = true; // Включаем автоматическую прокрутку
+            pictureBox1.Image = Resources.Map;
+            //pictureBox1.Dock = DockStyle.Fill;
+            //pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
 
-            PictureBox pictureBox = new PictureBox();
-            pictureBox.Image = Resources.Map;
-            pictureBox.Dock = DockStyle.Fill;
-            pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
-            panel1.Controls.Add(pictureBox);
-
-            panel1.Dock = DockStyle.Fill;
 
             //panel1.AutoScrollMinSize = new Size(0, 0); // Устанавливаем минимальный размер для прокрутки
 
 
-            trackBar1.Minimum = 1;
+            // Устанавливаем максимальное значение трекбара
             trackBar1.Maximum = 10;
-            trackBar1.Value = 5; // Начальное значение масштаба
-            //trackBar1.Dock = DockStyle.Top;
-            //Track(trackBar1, pictureBox);
-            // Подписываемся на событие MouseMove для отображения координат
-            pictureBox.MouseMove += (sender, e) =>
+
+            // Устанавливаем начальное значение трекбара
+            trackBar1.Value = 10;
+
+            // Подписываемся на событие изменения значения трекбара
+            trackBar1.ValueChanged += (sender, e) =>
             {
-                Point imagePoint = GetImageCoordinates(e.Location, pictureBox);
+                // Получаем текущее значение трекбара
+                int zoomValue = trackBar1.Value;
+
+                // Изменяем масштаб изображения в зависимости от значения трекбара
+                UpdateImageScale(pictureBox1, zoomValue);
+            };
+            //Track(trackBar1, pictureBox1);
+            // Подписываемся на событие MouseMove для отображения координат
+            pictureBox1.MouseMove += (sender, e) =>
+            {
+                Point imagePoint = GetImageCoordinates(e.Location, pictureBox1);
                 Koord.Text = $"X: {imagePoint.X}, Y: {imagePoint.Y}";
             };
 
 
-            panel1.AutoScroll = true; // Включаем автоматическую прокрутку
+
         }
-        static void Track(System.Windows.Forms.TrackBar trackBar1, PictureBox pictureBox)
+        // Метод для обновления масштаба изображения
+        private void UpdateImageScale(PictureBox pictureBox, int zoomValue)
         {
-            trackBar1.ValueChanged += (sender, e) =>
-            {
+            // Устанавливаем режим масштабирования изображения в PictureBoxSizeMode.Zoom
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 
-                float zoom = (float)trackBar1.Value / 5;
-                pictureBox.Width = (int)(pictureBox.Image.Width * zoom);
-                pictureBox.Height = (int)(pictureBox.Image.Height * zoom);
-                pictureBox.Invalidate(); // Перерисовываем PictureBox при изменении масштаба
-            };
-
+            // Изменяем размеры PictureBox в соответствии с масштабом
+            float zoom = (float)zoomValue / 10;
+            pictureBox.Width = (int)(pictureBox.Image.Width * zoom);
+            pictureBox.Height = (int)(pictureBox.Image.Height * zoom);
         }
 
         // Метод для обновления размеров PictureBox в соответствии с масштабом
@@ -126,6 +126,47 @@ namespace GUIGIS
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)//изменить масштаб
+        {
+            // Подписываемся на событие изменения значения трекбара
+            trackBar1.ValueChanged += (sender, e) =>
+            {
+                // Получаем текущее значение трекбара
+                int zoomValue = trackBar1.Value;
+
+                // Изменяем масштаб изображения в зависимости от значения трекбара
+                UpdateImageScale(pictureBox1, zoomValue);
+            };
+        }
+
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            giSSim = new(toolStripTextBox1.Text);
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)//добавление узла
+        {
+            giSSim.AddNode(NodeNameAddText.Text, Convert.ToDouble(NodeXAddText.Text), Convert.ToDouble(NodeYAddText.Text));
+        }
+
+        private void button4_Click(object sender, EventArgs e)//добавление ребра
+        {
+            giSSim.AddEdge(AddNameTextBoxEdge.Text, Convert.ToInt32(AddEdgeComboBoxNodes1.Text),
+                Convert.ToInt32(AddEdgeComboBoxNodes2.Text), Convert.ToInt32(AddTrafficTimeTextBoxEdge.Text),
+                Convert.ToInt32(AddLinesEdgeTextBox.Text), Convert.ToInt32(AddLenghtMTextBox.Text),
+                Convert.ToInt32(AddSpeedLimitTextBox.Text), Convert.ToInt32(AddInComingEdgetextBox.Text), Convert.ToInt32(AddOutComingEdgetextBox.Text));
         }
     }
 }

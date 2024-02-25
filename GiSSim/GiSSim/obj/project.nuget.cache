@@ -1,54 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WGAx+ZHhR7W1IGcDi1qjXDaMoV8UoXHuTiBTrZPDmFHruSATPMg/SACNK1bn1UP0+y0e/57SDQKteURmPoVJsQ==",
+  "dgSpecHash": "zR5WBkiB5NxN6kvVr4Q492agFsH9ZjVID73QkYc0XQ2mjaO4adjyTc50+DQlWdPvCxHrcLkztYxPKUO7kX+ywQ==",
   "success": true,
   "projectFilePath": "E:\\_КубГТУ\\_ВКР\\GISS\\GISSimulation\\GISSimulation\\GiSSim\\GiSSim\\GiSSim.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Сергей\\.nuget\\packages\\graphsharp\\1.1.0\\graphsharp.1.1.0.nupkg.sha512",
-    "C:\\Users\\Сергей\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\Сергей\\.nuget\\packages\\quickgraph\\3.6.61119.7\\quickgraph.3.6.61119.7.nupkg.sha512",
-    "C:\\Users\\Сергей\\.nuget\\packages\\wpfextensions\\1.0.0\\wpfextensions.1.0.0.nupkg.sha512"
+    "C:\\Users\\Сергей\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1602",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "GraphSharp 1.1.0 не задает включенную нижнюю границу для зависимости WPFExtensions. Использовано наилучшее приближенное соответствие WPFExtensions 1.0.0.",
-      "libraryId": "WPFExtensions",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Пакет \"GraphSharp 1.1.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
-      "libraryId": "GraphSharp",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Пакет \"QuickGraph 3.6.61119.7\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
-      "libraryId": "QuickGraph",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Пакет \"WPFExtensions 1.0.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
-      "libraryId": "WPFExtensions",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }
