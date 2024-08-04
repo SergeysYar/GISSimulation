@@ -12,21 +12,11 @@ namespace GiSSim
         public string Name { get; private set; }
         public List<RoadNode> Nodes { get; private set; }
         public List<RoadEdge> Edges { get; private set; }
-        private Dictionary<RoadNode, List<RoadEdge>> adjacencyList;
-
         private RoadMap()
         {
+
             Nodes = new List<RoadNode>();
             Edges = new List<RoadEdge>();
-        }
-        public List<RoadEdge> GetOutgoingEdges(RoadNode node)
-        {
-            if (adjacencyList.ContainsKey(node))
-            {
-                return adjacencyList[node];
-            }
-
-            return new List<RoadEdge>(); // Если узел отсутствует в adjacencyList, возвращаем пустой список ребер
         }
 
         public class Builder

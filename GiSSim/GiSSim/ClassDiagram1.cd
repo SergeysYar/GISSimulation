@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="GiSSim.Car">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAABAAQAAABAAAAAAAIgAAAAAAA=</HashCode>
+      <FileName>Car.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GiSSim.DijkstraAlgorithm">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <NestedTypes>
+      <Class Name="GiSSim.DijkstraAlgorithm.ShortestPathResult" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DijkstraAlgorithm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEABAAAAAAAAEAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>DijkstraAlgorithm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DijkstraAlgorithmEdge" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GiSSim.DijkstraAlgorithmEdge">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAEAAQA=</HashCode>
+      <FileName>DijkstraEdge.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DijkstraAlgorithm" />
+      <Property Name="FindingShortestPath" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GiSSim.PriorityQueue&lt;T&gt;">
+    <Position X="8.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAABAAAAAAAAAAAAAAAQAAAAABAAAAAAAAAAAACA=</HashCode>
+      <FileName>DijkstraEdge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GiSSim.FindingShortestPath">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FindingShortestPath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GiSSim.GiSSim">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAACAAAAEECAAAAAAAAAAAAAIEAAAABAAIgAA=</HashCode>
+      <FileName>GiSSim.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Simulation" />
+      <Property Name="SaveAndLoadJSON" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GiSSim.RoadGraph">
+    <Position X="5.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Graph.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GiSSim.RandomPathGenerator">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RandomPathGenerator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DijkstraAlgorithm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GiSSim.RoadEdge">
+    <Position X="11" Y="4.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="GiSSim.RoadEdge.Builder" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>RoadEdge.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AgACAAAACgQAAgAAAAAAACAAAAIgQAAAAAAAAAIAAAA=</HashCode>
+      <FileName>RoadEdge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GiSSim.RoadMap">
+    <Position X="6" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="GiSSim.RoadMap.Builder">
+        <TypeIdentifier>
+          <NewMemberFileName>RoadMap.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>MAAggAAAAAAAAAAEAAAAAAQAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoadMap.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RoadNode" />
+      <Property Name="RoadEdge" />
+      <Property Name="RoadGraph" />
+      <Property Name="PriorityQueue" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GiSSim.RoadNode">
+    <Position X="11" Y="2" Width="1.5" />
+    <AssociationLine Name="Vector2D" Type="GiSSim.Vector2D">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.118" Y="-0.079" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABCAAAAAAAAEAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoadNode .cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Vector2D" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GiSSim.SaveAndLoadJSON">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>SaveAndLoadJSON.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GiSSim.Simulation">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAACAgACAAAAAAAAwEQAACAAAAAgAACAAAA=</HashCode>
+      <FileName>Simulation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CarState" />
+      <Property Name="SimulationState" />
+      <Property Name="RoadMap1" />
+      <Property Name="DijkstraAlgorithm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GiSSim.SimulationState">
+    <Position X="2.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAQCQAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Simulation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GiSSim.CarState">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAQAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Simulation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Car" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GiSSim.Vector2D">
+    <Position X="12.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Vector2D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
-using QuickGraph;
+
 
 namespace GiSSim
 {
@@ -15,6 +15,7 @@ namespace GiSSim
     {
         public static void SaveGraphToJSON(RoadMap roadGraph, string filePath)
         {
+            RoadMap r = roadGraph;
             string json = JsonConvert.SerializeObject(roadGraph, Formatting.Indented);
             File.WriteAllText(filePath, json);
         }

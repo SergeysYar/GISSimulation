@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zR5WBkiB5NxN6kvVr4Q492agFsH9ZjVID73QkYc0XQ2mjaO4adjyTc50+DQlWdPvCxHrcLkztYxPKUO7kX+ywQ==",
+  "dgSpecHash": "lAuw9w9g+PHJlxHEJdGQFjlgebebC/4DN5FdHSRk/Crvh7SPDmhnLBpXX7t4hX9ov675BZ5qIiZriwG6EUjPUQ==",
   "success": true,
-  "projectFilePath": "E:\\_КубГТУ\\_ВКР\\GISS\\GISSimulation\\GISSimulation\\GiSSim\\GiSSim\\GiSSim.csproj",
+  "projectFilePath": "C:\\_КубГТУ\\_ВКР\\Прога\\Программа_ВКР\\GISS\\GISS\\GISSimulation\\GISSimulation\\GiSSim\\GiSSim\\GiSSim.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Сергей\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\Professional\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

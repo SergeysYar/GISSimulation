@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QuickGraph;
+
 
 
 namespace GiSSim
@@ -11,18 +12,18 @@ namespace GiSSim
     //класс конструктора квартала
     public class RoadEdge
     {
-        public int Id { get; private set; }
-        public string NameGap { get; private set; }
-        public RoadNode Source { get; private set; }
-        public RoadNode Target { get; private set; }
-        public int TraficLightTimeSecond { get; private set; }
-        public int Lanes { get; private set; }
-        public double LengthM { get; private set;}
-        public int SpeedLimit { get; private set; }
-        public int Incoming { get; private set; }
-        public int Outgoing { get; private set; }
-        public List<double> WorkLoadsList { get; private set; }
-        //public List<SimulationState>  SimulationStates { get; set; }
+        public int Id { get;  set; }
+        public string NameGap { get;  set; }
+        public RoadNode Source { get;  set; }
+        public RoadNode Target { get;  set; }
+        public int TraficLightTimeSecond { get;  set; }
+        public int Lanes { get;  set; }
+        public double LengthM { get;  set;}
+        public int SpeedLimit { get;  set; }
+        public int Incoming { get;  set; }
+        public int Outgoing { get;  set; }
+        [JsonIgnore]
+        public List<double> WorkLoadsList { get;  set; }
         public RoadEdge() 
         {
             WorkLoadsList= new List<double>();

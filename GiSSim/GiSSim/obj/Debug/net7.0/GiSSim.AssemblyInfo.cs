@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GiSSim")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+190a20103e356abe0e2bc8bf038059bd253957eb")]
 [assembly: System.Reflection.AssemblyProductAttribute("GiSSim")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GiSSim")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

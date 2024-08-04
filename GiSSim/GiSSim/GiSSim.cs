@@ -9,7 +9,7 @@ namespace GiSSim
 {
     public class GiSSim
     {
-        private RoadMap roadMap;
+        public RoadMap roadMap;
         public GiSSim(string Name) 
         {
             roadMap = new RoadMap.Builder(Name).Build();
@@ -49,6 +49,7 @@ namespace GiSSim
         }
         public void LoadRoadMap(string filename)
         {
+            //roadMap = new RoadMap.Builder("R").Build();
             roadMap=SaveAndLoadJSON.LoadGraphToJSON(filename);
         }
         public RoadMap StartSimulation(int iteration, int minutes)

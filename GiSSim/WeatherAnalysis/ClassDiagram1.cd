@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WeatherAnalysis.ActivateWeatherAnalysis" Collapsed="true">
+    <Position X="8.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAIAAAAAAAAAAAAAAAAAAAAAAAAAABAAgAAAAAA=</HashCode>
+      <FileName>ActivateWeatherAnalysis.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="HistoricalData" />
+      <Property Name="WeatherForecast" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WeatherAnalysis.APIWeather" Collapsed="true">
+    <Position X="6.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAIAAAIAAAAABIBQAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>APIWeather.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="HistoricalData" />
+      <Property Name="ActivateWeatherAnalysis" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WeatherAnalysis.HistoricalData" Collapsed="true">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAEABAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>HistoricalData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="KnowBase" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WeatherAnalysis.KnowBase" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>KnowBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeatherAnalysis.TrafficPrediction" Collapsed="true">
+    <Position X="11.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>TrafficPrediction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeatherAnalysis.WeatherForecast" Collapsed="true">
+    <Position X="9" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAgAABAEAAA=</HashCode>
+      <FileName>WeatherForecast.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="WeatherForecastCorrectionModule" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WeatherAnalysis.WeatherForecastCorrectionModule" Collapsed="true">
+    <Position X="9" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAQAAAAAAEAAAAAAAAIAAAAAAE=</HashCode>
+      <FileName>WeatherForecastCorrectionModule.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TrafficPrediction" />
+      <Property Name="WeatherInfo" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WeatherAnalysis.WeatherInfo" Collapsed="true">
+    <Position X="9" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAACAAAAAAAAAAAAAAAEBAAEAAA=</HashCode>
+      <FileName>WeatherInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeatherAnalysis.WeatherMain" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAgAAAACAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>WeatherMain.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="APIWeather" />
+      <Property Name="ActivateWeatherAnalysis" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
