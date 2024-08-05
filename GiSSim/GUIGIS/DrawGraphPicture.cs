@@ -26,7 +26,7 @@ namespace GUIGIS
             {
             }
         }
-
+        //
         public static void DrawGraph(PictureBox pictureBox, float zoom, int iteration, RoadMap roadMap, Label currentValue, DataGridView datagrid)//отриосвка графа
         {
             datagrid.Rows.Clear();
